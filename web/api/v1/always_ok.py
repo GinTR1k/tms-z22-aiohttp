@@ -8,7 +8,7 @@ route = web.RouteTableDef()
 
 @route.get('/always_ok')
 async def always_ok(request: Request):
-    return {'message': 'i\'m always ok'}
+    return {"message": "i'm always ok"}
 
 
 @route.post('/new_message')
@@ -20,4 +20,4 @@ async def new_message(request: Request):
         session.add(message)
         await session.commit()
 
-    return {'success': True, 'message': message.to_dict()}
+    return message.to_dict()
